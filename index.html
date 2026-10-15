@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ali Aldulaimi | Embedded Systems & IT Engineer</title>
+    <meta name="description" content="Ali Aldulaimi is an IT engineer in Espoo, Finland, specializing in embedded systems, BLE mesh networks, test automation and industrial networking." />
+    <meta name="theme-color" content="#07090f" />
+    <meta property="og:title" content="Ali Aldulaimi | Embedded Systems & IT Engineer" />
+    <meta property="og:description" content="Firmware, wireless mesh networks, test automation and secure industrial networks." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307090f'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='30' fill='%233ee0ff'%3EA%3C/text%3E%3Ccircle cx='48' cy='16' r='5' fill='%23ffb627'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <!-- boot screen -->
+    <div class="boot" id="boot" aria-hidden="true">
+      <pre class="boot__log" id="bootLog"></pre>
+    </div>
+
+    <div class="progress" id="progress"></div>
+    <div class="cursor-glow" id="glow" aria-hidden="true"></div>
+
+    <header class="nav" id="nav">
+      <a class="nav__brand" href="#top" aria-label="Back to top">
+        <span class="nav__logo">A</span><span class="nav__name">Aldulaimi</span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#work">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn--small btn--ghost nav__cv" href="/docs/Ali-Aldulaimi-CV.pdf" download>Download CV</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </header>
+
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <canvas class="hero__mesh" id="mesh" aria-hidden="true"></canvas>
+        <div class="hero__fade" aria-hidden="true"></div>
+        <div class="hero__inner">
+          <p class="chip reveal"><span class="pulse"></span>Open to opportunities · Espoo, Finland</p>
+          <h1 class="hero__title reveal">
+            <span class="hero__hello">Hi, I’m</span>
+            <span class="hero__name" data-text="Ali Aldulaimi">Ali Aldulaimi</span>
+          </h1>
+          <p class="hero__role reveal">
+            IT engineer building
+            <span class="typer" id="typer" aria-live="polite"></span><span class="caret" aria-hidden="true"></span>
+          </p>
+          <p class="hero__lead reveal">
+            I work where hardware meets software: firmware for STM32 and nRF52, wireless mesh networks, CI test rigs
+            for protection relays, and secure industrial networks.
+          </p>
+          <div class="hero__cta reveal">
+            <a class="btn btn--primary magnetic" href="#work">View my work <span aria-hidden="true">→</span></a>
+            <a class="btn btn--ghost magnetic" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <p class="hero__hint" aria-hidden="true"><span class="mono">click anywhere in the mesh to broadcast a packet</span></p>
+        <a class="scroll-cue" href="#about" aria-label="Scroll to about"><span></span></a>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section" id="about">
+        <div class="container about">
+          <div class="about__photo reveal">
+            <div class="tilt" id="tilt">
+              <svg class="chip" id="chip" viewBox="0 0 400 400" role="img" aria-label="Animated microchip with the initials AA"></svg>
+              <div class="tilt__shine"></div>
+            </div>
+          </div>
+          <div class="about__text">
+            <p class="eyebrow reveal">01 · About</p>
+            <h2 class="h2 reveal">Turning <em>signals</em> into systems you can trust.</h2>
+            <p class="reveal">
+              I’m an IT engineer specializing in <strong>embedded systems</strong>, with experience in automation,
+              networking and system administration. I’m originally from Iraq and have lived in Finland since 2014, where I
+              earned a Bachelor of Engineering in IT (Embedded Systems) at VAMK, on top of a degree in Pure Mathematics.
+              I’m now studying for a <strong>Master of Science (Technology) in Information Security</strong>.
+            </p>
+            <p class="reveal">
+              I enjoy hard problems: designing control systems, building automated test rigs, or tuning a
+              Bluetooth Low Energy mesh until every packet arrives. Math helps me reason about a problem, and the lab
+              helps me prove the answer works.
+            </p>
+            <div class="stats" id="stats">
+              <div class="stat reveal"><span class="stat__num" data-count="18">0</span><span class="stat__plus">+</span><span class="stat__label">years in tech, since 2008</span></div>
+              <div class="stat reveal"><span class="stat__num" data-count="9">0</span><span class="stat__label">featured projects</span></div>
+              <div class="stat reveal"><span class="stat__num" data-count="4">0</span><span class="stat__label">languages spoken</span></div>
+              <div class="stat reveal"><span class="stat__num" data-count="4">0</span><span class="stat__label">degrees &amp; diplomas, 1 in progress</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="section section--tight" id="skills">
+        <div class="marquee" aria-hidden="true"><div class="marquee__track" id="marquee"></div></div>
+        <div class="container">
+          <p class="eyebrow reveal">02 · Toolbox</p>
+          <h2 class="h2 reveal">From the <em>register level</em> up to the cloud dashboard.</h2>
+          <div class="skills" id="skillGrid"></div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section" id="work">
+        <div class="container">
+          <div class="section__head">
+            <div>
+              <p class="eyebrow reveal">03 · Selected work</p>
+              <h2 class="h2 reveal">Projects I’ve <em>built</em>.</h2>
+            </div>
+            <div class="filters reveal" id="filters" role="tablist" aria-label="Filter projects"></div>
+          </div>
+          <div class="projects" id="projectGrid"></div>
+          <article class="next reveal">
+            <div class="next__dot"><span class="pulse"></span></div>
+            <div>
+              <h3>Next project: coming soon</h3>
+              <p>I’m choosing my next project now. It will be announced here, so check back soon.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="section" id="experience">
+        <div class="container exp">
+          <div class="exp__col">
+            <p class="eyebrow reveal">04 · Experience</p>
+            <h2 class="h2 reveal">Where I’ve <em>worked</em>.</h2>
+            <ol class="timeline" id="timeline"><span class="timeline__fill" id="timelineFill"></span></ol>
+          </div>
+          <aside class="exp__side">
+            <div class="panel reveal">
+              <h3 class="panel__title">Education</h3>
+              <ul class="edu" id="education"></ul>
+            </div>
+            <div class="panel reveal">
+              <h3 class="panel__title">Languages</h3>
+              <ul class="langs" id="languages"></ul>
+            </div>
+            <div class="panel reveal">
+              <h3 class="panel__title">Recognition</h3>
+              <ul class="awards" id="awards"></ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section contact" id="contact">
+        <div class="container contact__inner">
+          <div>
+            <p class="eyebrow reveal">05 · Contact</p>
+            <h2 class="h2 h2--xl reveal">Let’s build <em>something</em> together.</h2>
+            <p class="reveal contact__lead">
+              Have a role, a project or feedback on this site? I’d love to hear from you.
+            </p>
+            <div class="contact__links reveal" id="contactLinks"></div>
+          </div>
+          <form class="form reveal" id="contactForm" novalidate>
+            <label class="field"><input name="name" required placeholder=" " autocomplete="name" /><span>Your name</span></label>
+            <label class="field"><input name="email" type="email" required placeholder=" " autocomplete="email" /><span>Your email</span></label>
+            <label class="field"><textarea name="message" required rows="5" placeholder=" "></textarea><span>Message or feedback</span></label>
+            <button class="btn btn--primary btn--block magnetic" type="submit">Send message <span aria-hidden="true">↗</span></button>
+            <p class="form__note mono" id="formNote">Opens in your email app.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>© <span id="year"></span> Ali Aldulaimi</p>
+        <p class="mono">Designed &amp; built with TypeScript · Espoo, FI</p>
+        <a href="#top" class="footer__top">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <dialog class="modal" id="modal" aria-labelledby="modalTitle">
+      <div class="modal__body" id="modalBody"></div>
+    </dialog>
+
+    <div class="lightbox" id="lightbox" hidden>
+      <button class="lightbox__close" aria-label="Close image">×</button>
+      <img alt="" id="lightboxImg" />
+    </div>
+
+    <div class="toast" id="toast" role="status"></div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
