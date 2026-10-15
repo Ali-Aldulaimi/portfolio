@@ -171,8 +171,9 @@
             <label class="field"><input name="name" required placeholder=" " autocomplete="name" /><span>Your name</span></label>
             <label class="field"><input name="email" type="email" required placeholder=" " autocomplete="email" /><span>Your email</span></label>
             <label class="field"><textarea name="message" required rows="5" placeholder=" "></textarea><span>Message or feedback</span></label>
+            <input class="form__trap" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <button class="btn btn--primary btn--block magnetic" type="submit">Send message <span aria-hidden="true">↗</span></button>
-            <p class="form__note mono" id="formNote">Opens in your email app.</p>
+            <p class="form__note mono" id="formNote" aria-live="polite">I usually reply within a few days.</p>
           </form>
         </div>
       </section>

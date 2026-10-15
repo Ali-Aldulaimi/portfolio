@@ -1286,6 +1286,20 @@ a.clink:hover {
 .was-validated .field :invalid {
   border-color: #ff6b6b;
 }
+.form__trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.form button:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+.form__note a {
+  color: var(--cyan);
+}
 .form__note {
   margin: 0;
   text-align: center;

@@ -308,4 +308,6 @@ export const contact = {
   location: 'Espoo, Finland',
   linkedin: 'https://www.linkedin.com/in/ali-aldulaimi/',
   github: 'https://github.com/Ali-Aldulaimi/',
+  /** Contact form messages are delivered to server.feedback0@gmail.com via FormSubmit. */
+  formEndpoint: 'https://formsubmit.co/ajax/server.feedback0@gmail.com',
 };

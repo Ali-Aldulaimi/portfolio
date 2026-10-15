@@ -272,7 +272,10 @@ function renderContact() {
   });
 
   const form = $<HTMLFormElement>('#contactForm');
-  form.addEventListener('submit', (e) => {
+  const submit = $<HTMLButtonElement>('button[type="submit"]', form);
+  const note = $('#formNote');
+  const label = submit.innerHTML;
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!form.checkValidity()) {
       form.classList.add('was-validated');
@@ -280,12 +283,37 @@ function renderContact() {
       return;
     }
     const data = new FormData(form);
-    const subject = `Portfolio message from ${data.get('name')}`;
-    const body = `${data.get('message')}\n\n— ${data.get('name')} (${data.get('email')})`;
-    location.href = `mailto:${contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    toast('Opening your email app…');
-    form.reset();
-    form.classList.remove('was-validated');
+    submit.disabled = true;
+    submit.textContent = 'Sending…';
+    note.textContent = 'Sending your message…';
+    try {
+      const res = await fetch(contact.formEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: data.get('name'),
+          email: data.get('email'),
+          message: data.get('message'),
+          _subject: `Portfolio message from ${data.get('name')}`,
+          _replyto: data.get('email'),
+          _template: 'table',
+          _captcha: 'false',
+          _honey: data.get('_honey'),
+        }),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || json.success === false || json.success === 'false') throw new Error(json.message || res.statusText);
+      form.reset();
+      form.classList.remove('was-validated');
+      note.textContent = 'Thanks! Your message was sent.';
+      toast('Message sent. Thank you!');
+    } catch {
+      note.innerHTML = `Couldn’t send right now. Please email <a href="mailto:${contact.email}">${contact.email}</a>.`;
+      toast('Sorry, the message could not be sent');
+    } finally {
+      submit.disabled = false;
+      submit.innerHTML = label;
+    }
   });
 }
 
