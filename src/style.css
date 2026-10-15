@@ -1533,6 +1533,9 @@ a.clink:hover {
   transition: opacity 0.25s;
   cursor: zoom-out;
 }
+.lightbox[hidden] {
+  display: none;
+}
 .lightbox.is-open {
   opacity: 1;
 }
